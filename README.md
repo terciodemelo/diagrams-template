@@ -7,14 +7,14 @@ This is a simple template for making [Diagrams](https://diagrams.mingrammer.com/
 Diagrams python files must be placed in `src/`. It is recommended, but not required, to place images in `img`. This can be done by setting the `filename` attribute in the `Diagram` object as below:
 
 ```python
-with Diagram("Grouped Workers", show=False,
-                                direction="TB",
+with Diagram('Grouped Workers', show=False,
+                                direction='TB',
                                 filename='img/example'):
-    ELB("lb") >> [EC2("worker1"),
-                  EC2("worker2"),
-                  EC2("worker3"),
-                  EC2("worker4"),
-                  EC2("worker5")] >> RDS("events")
+    ELB('lb') >> [EC2('worker1'),
+                  EC2('worker2'),
+                  EC2('worker3'),
+                  EC2('worker4'),
+                  EC2('worker5')] >> RDS('events')
 ```
 
 ## Running
