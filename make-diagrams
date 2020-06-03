@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-source ~/.bashrc
-
 if [[ -z "$RUNNING_IN_DOCKER" ]]; then
     docker run --rm -it \
         -e RUNNING_IN_DOCKER=true \
@@ -11,6 +9,7 @@ if [[ -z "$RUNNING_IN_DOCKER" ]]; then
         $(docker build -q -f docs.dockerfile .) \
         ./make-diagrams
 else
+    source ~/.bashrc
     poetry install
 
     for diagram in src/*; do
